@@ -96,7 +96,7 @@ client.on('message', msg => {
   });
 
 client.on('message', msg => {
-    if (msg.content === 'هلا ') {
+    if (msg.content === 'هلا') {
       msg.reply('ياسيد');
     }
   });
