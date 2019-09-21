@@ -89,28 +89,6 @@ client.on('message', async (message) => {
   }
 });
 
-client.on('message', msg => {
-    if (msg.content === 'ياسيد') {
-      msg.reply('هلا');
-    }
-  });
 
-client.on('message', msg => {
-    if (msg.content === 'هلا') {
-      msg.reply('ياسيد');
-    }
-  });
-
-client.on('message', msg => {
-    if (msg.content === 'ياسيد') {
-      msg.reply('هلا');
-    }
-  });
-
-client.on('message', msg => {
-    if (msg.content === 'هلا ') {
-      msg.reply('ياسيد');
-    }
-  });
 
 client.login(process.env.BOT_TOKEN);
