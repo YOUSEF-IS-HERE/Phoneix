@@ -69,5 +69,25 @@ msg.delete();
 }
 });
 
+//nickname
+client.on('message', async (message) => {
+  if (!message.guild || message.author.bot) return;
+  let args = message.content.split(' ');
+  let prefix = '!!';
+  if (args[0] == `${prefix}nickall`) {
+    if (!message.member.hasPermission('MANAGE_NICKNAMES') || !message.guild.me.hasPermission('MANAGE_NICKNAMES')) return;
+    if (!args[1]) return message.reply('Type the nickname ( [name] = member username ).');
+    let members = message.guild.members.filter(m => m.manageable);
+    message.channel.send(`Changing nickname for ${members.size} members.`);
+    members.forEach((m, i) => {
+      setTimeout(() => {
+        m.setNickname(args.slice(1).join(' ').replace('[name]', m.user.username)).catch(e => {
+          message.channel.send(`Could not change nickname for **${m.user.tag}**.`);
+        });
+      }, (2000 * i));
+    });
+  }
+});
+
 
 client.login(process.env.BOT_TOKEN);
