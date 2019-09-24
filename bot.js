@@ -108,4 +108,12 @@ client.on("message", message => {
       else message.channel.send(`**يجب عليك ان تكون في الروم الذي تريد جلب رابط مشاركة بالفيديو خاص به**`);
 });
 
+client.on("message", async message => {
+    if(message.content.startsWith(prefix + "invite")) {
+        const invite = `**Invite: [No Any Perms](${await client.generateInvite()})
+Invite: [Administrator Perm](${await client.generateInvite(["ADMINISTRATOR"])})**`;
+        message.channel.send(invite)
+    }
+})
+
 client.login(process.env.BOT_TOKEN);
