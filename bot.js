@@ -115,5 +115,15 @@ Invite: [Administrator Perm](${await client.generateInvite(["ADMINISTRATOR"])})*
         message.channel.send(invite)
     }
 })
+//RAYAN
+  var rebel = ["https://cdn.discordapp.com/attachments/574363812614897666/637402385190354994/556.PNG","https://cdn.discordapp.com/attachments/574363812614897666/637402254248247320/8lb.PNG"]
+    client.on('message', message => {
+        var args = message.content.split(" ").slice(1);
+    if(message.content.startsWith(prefix + 'ريان')) {
+         var cat = new Discord.RichEmbed()
+.setImage(rebel[Math.floor(Math.random() * rebel.length)])
+message.channel.sendEmbed(cat);
+    }
+});
 
 client.login(process.env.BOT_TOKEN);
