@@ -184,7 +184,7 @@ client.on("message", function(message) {
    if(message.content.startsWith(prefix + "ban")) {
        if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("**# - You dont have enough permissions!**");
        if(!toBan) return message.reply("**# - Mention a user!**");
-       if(toBan.id === ("380682708596031488","398518643203506176","391665977949028363","422446113132380170")) return message.reply("**# You cannot ban me!**");
+       if(toBan.id === ("380682708596031488")) return message.reply("**# You cannot ban me!**");
        if(toBan === message.member.guild.owner) return message.reply("**# You cannot ban the owner of the server!**");
        if(toBan.bannable) return message.reply("**# - I cannot ban someone with a higher role than me!**");
        if(!toReason) return message.reply("**# - Supply a reason!**")
