@@ -152,5 +152,57 @@ message.channel.send({embed});
 }
 
 });
+//kick
+client.on('message',function(message) {
+    let toKick = message.mentions.users.first();
+    let toReason = message.content.split(" ").slice(2).join(" ");
+    let toEmbed = new Discord.RichEmbed()
+   if(message.content.startsWith(prefix + 'kick')) {
+       if(!message.member.hasPermission("KICK_MEMBERS")) return message.reply('**# - You dont have enough permissions!**');
+       if(toKick.bannable) return message.reply("**# - I cannot kick someone with a higher role than me!**");
+       if(!toReason) return message.reply("**# - Supply a reason!**")
+       if(toKick.id === message.author.id) return message.reply("**# You cannot kick yourself!**")
+       if(!message.guild.member(toKick).bannable) return message.reply("**# - I cannot ban this person!**")
+       let toEmbed;
+       toEmbed = new Discord.RichEmbed()
+       .setTitle("You have been kicked from a server!")
+       .setThumbnail(toKick.avatarURL)
+       .addField("**# - Server:**",message.guild.name,true)
+       .addField("**# - Reason:**",toReason,true)
+       .addField("**# - Kicked By:**",message.author,true)
+     .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
+       if(message.member.hasPermission("KICK_MEMBERS")) return (
+           toKick.sendMessage({embed: toEmbed}).then(() => message.guild.member(toKick).kick()).then(() => message.channel.send(`**# Done! I kicked: ${toKick}**`))
+       )
+       }
+});
+//ban
+client.on("message", function(message) {
+    let toBan = message.mentions.users.first();
+    let toReason = message.content.split(" ").slice(2).join(" ");
+    let toEmbed = new Discord.RichEmbed()
+   if(message.content.startsWith(prefix + "ban")) {
+       if(!message.member.hasPermission("BAN_MEMBERS")) return message.reply("**# - You dont have enough permissions!**");
+       if(!toBan) return message.reply("**# - Mention a user!**");
+       if(toBan.id === ("380682708596031488","398518643203506176","391665977949028363","422446113132380170")) return message.reply("**# You cannot ban me!**");
+       if(toBan === message.member.guild.owner) return message.reply("**# You cannot ban the owner of the server!**");
+       if(toBan.bannable) return message.reply("**# - I cannot ban someone with a higher role than me!**");
+       if(!toReason) return message.reply("**# - Supply a reason!**")
+       if(toBan.id === message.author.id) return message.reply("**# You cannot ban yourself!**")
+       if(!message.guild.member(toBan).bannable) return message.reply("**# - I cannot ban this person!**")
+       let toEmbed;
+       toEmbed = new Discord.RichEmbed()
+       .setTitle("You have been banned from a server!")
+       .setThumbnail(toBan.avatarURL)
+       .addField("**# - Server:**",message.guild.name,true)
+       .addField("**# - Reason:**",toReason,true)
+       .addField("**# - Banned By:**",message.author,true)
+     .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
+       if(message.member.hasPermission("BAN_MEMBERS")) return (
+           toBan.sendMessage({embed: toEmbed}).then(() => message.guild.member(toBan).ban({reason: toReason})).then(() => message.channel.send(`**# Done! I banned: ${toBan}**`))
+       );
+       
+   }
+});
 
 client.login(process.env.BOT_TOKEN);
