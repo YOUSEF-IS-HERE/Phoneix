@@ -84,7 +84,7 @@ client.on('message', function(msg) {
       .addField('👑**__ الأونـر__**',`**${msg.guild.owner}**`,true)
       .addField('🆔**__ ايدي السيرفر__**',`**${msg.guild.id}**`,true)
       .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
-      .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
+      .setFooter(`Phoenix's Bot `,'')
       msg.channel.send({embed:embed});
     }
   });
@@ -145,7 +145,7 @@ let embed = new Discord.RichEmbed()
 .addField("**تاريخ دخولك للسيرفر| ⌚   :**", message.member.joinedAt.toLocaleString())    
 
 .addField('**⌚ | تاريخ انشاء حسابك الكامل:**', message.author.createdAt.toLocaleString())
-.setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
+.setFooter(`Phoenix's Bot `,'')
 message.channel.send({embed});
     if (!message) return message.reply('**ضع المينشان بشكل صحيح  ❌ **').catch(console.error);
 
@@ -170,7 +170,7 @@ client.on('message',function(message) {
        .addField("**# - Server:**",message.guild.name,true)
        .addField("**# - Reason:**",toReason,true)
        .addField("**# - Kicked By:**",message.author,true)
-     .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
+     .setFooter(`Phoenix's Bot`,'')
        if(message.member.hasPermission("KICK_MEMBERS")) return (
            toKick.sendMessage({embed: toEmbed}).then(() => message.guild.member(toKick).kick()).then(() => message.channel.send(`**# Done! I kicked: ${toKick}**`))
        )
@@ -197,7 +197,7 @@ client.on("message", function(message) {
        .addField("**# - Server:**",message.guild.name,true)
        .addField("**# - Reason:**",toReason,true)
        .addField("**# - Banned By:**",message.author,true)
-     .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
+       .setFooter(`Phoenix's Bot`,'')
        if(message.member.hasPermission("BAN_MEMBERS")) return (
            toBan.sendMessage({embed: toEmbed}).then(() => message.guild.member(toBan).ban({reason: toReason})).then(() => message.channel.send(`**# Done! I banned: ${toBan}**`))
        );
@@ -205,21 +205,7 @@ client.on("message", function(message) {
    }
 });
 //members 
-client.on('message', message => {
-    if (message.author.bot) return;
-    if(message.content == '+member') {
-    const embed = new Discord.RichEmbed()
-    .addField(`حالة الأعضاء🔋`,'-',   true)
-.addField(`💚 اونلاين:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}`,'-',   true)
-.addField(`❤ مشغول:     ${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`,'-',   true)
-.addField(`💛 خامل:      ${message.guild.members.filter(m=>m.presence.status == 'idle').size}`,'-',   true)   
-.addField(`🖤 اوفلاين:   ${message.guild.members.filter(m=>m.presence.status == 'offline').size}`,'-',  true) 
-.addField(`💙   الكل:  ${message.guild.memberCount}`,'-',   true)     
-    .setFooter(`SN bot `,'https://cdn.discordapp.com/attachments/448412582055903232/463505714929991691/f.jpg')
-         message.channel.send({embed});
 
-    }
-  });
 //emoji chat
 const codes = {
     ' ': '   ',
@@ -275,4 +261,21 @@ if (message.member.voiceChannel == null) return message.channel.send(`**الرج
 
  }
    });
+//ping
+client.on('message', message => {
+                                if(!message.channel.guild) return;
+                        if (message.content.startsWith('=ping')) {
+                            if(!message.channel.guild) return;
+                            var msg = `${Date.now() - message.createdTimestamp}`
+                            var api = `${Math.round(client.ping)}`
+                            if (message.author.bot) return;
+                        let embed = new Discord.RichEmbed()
+                        .setAuthor(message.author.username,message.author.avatarURL)
+                        .setColor('RANDOM')
+                        .addField('**Time Taken:**',msg + " ms 📶 ")
+                        .addField('**WebSocket:**',api + " ms 📶 ")
+         .setFooter(`Phoenix's Bot`,'')
+                        message.channel.send({embed:embed});
+                        }
+                    });
 client.login(process.env.BOT_TOKEN);
