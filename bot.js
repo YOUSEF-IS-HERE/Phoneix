@@ -278,4 +278,10 @@ client.on('message', message => {
                         message.channel.send({embed:embed});
                         }
                     });
+//cat
+client.on('message', message => {
+    if (message.content === '+🐱') {
+        message.channel.sendFile("http://thecatapi.com/api/images/get?format=src&type=png", "cat.png")
+    }
+});
 client.login(process.env.BOT_TOKEN);
