@@ -280,13 +280,9 @@ client.on('message', message => {
                     });
 //cat
 client.on('message', message => {
-    if (message.content === '+🐱') {
-        message.channel.sendFile("http://thecatapi.com/api/images/get?format=src&type=png", "cat.png")
+    if (message.content === 'حمودي') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/519940850122489856/762222464372965376/Screenshot_89.png")
     }
 });
-client.on('message' , message => {
-    if(message.content.includes === 'حمودي') {
-    message.channel.send("https://cdn.discordapp.com/attachments/519940850122489856/762222464372965376/Screenshot_89.png");
-    }
-     });
+
 client.login(process.env.BOT_TOKEN);
