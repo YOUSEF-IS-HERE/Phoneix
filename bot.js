@@ -315,8 +315,8 @@ client.on('message', message => {
     }
 });
 client.on('message', message => {
-    if (message.content === 'راس الكبه') {
-        message.channel.sendFile("")
+    if (message.content === 'السلام عليكم') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/661101649238163487/762233908540080158/Screenshot_132.png")
     }
 });
 client.login(process.env.BOT_TOKEN);
