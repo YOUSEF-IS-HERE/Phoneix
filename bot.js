@@ -284,5 +284,14 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/519940850122489856/762222464372965376/Screenshot_89.png")
     }
 });
-
+client.on('message', message => {
+    if (message.content === 'زعلان') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/519940850122489856/762229348584521728/Screenshot_189.png")
+    }
+});
+client.on('message', message => {
+    if (message.content === 'قودزيلا') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/519940850122489856/762229587521437706/Screenshot_188.png")
+    }
+});
 client.login(process.env.BOT_TOKEN);
