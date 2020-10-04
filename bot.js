@@ -299,4 +299,17 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/519940850122489856/762230503226343444/Screenshot_26.png")
     }
 });
+client.on('message', message => {
+    if (message.content === 'مارد') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/759673970223480832/762202006017278002/kljjkljkl.png")
+    }
+});client.on('message', message => {
+    if (message.content === '') {
+        message.channel.sendFile("")
+    }
+});client.on('message', message => {
+    if (message.content === '') {
+        message.channel.sendFile("")
+    }
+});
 client.login(process.env.BOT_TOKEN);
