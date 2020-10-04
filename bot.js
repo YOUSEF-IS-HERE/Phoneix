@@ -303,12 +303,19 @@ client.on('message', message => {
     if (message.content === 'مارد') {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/759673970223480832/762202006017278002/kljjkljkl.png")
     }
-});client.on('message', message => {
-    if (message.content === '') {
-        message.channel.sendFile("")
+});
+client.on('message', message => {
+    if (message.content === 'صعوطي') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/661101649238163487/762232089785008158/1600328461557.png")
     }
-});client.on('message', message => {
-    if (message.content === '') {
+});
+client.on('message', message => {
+    if (message.content === 'مركز') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/661101649238163487/761211962910179369/2020-10-01_160235.png")
+    }
+});
+client.on('message', message => {
+    if (message.content === 'راس الكبه') {
         message.channel.sendFile("")
     }
 });
