@@ -278,6 +278,41 @@ client.on('message', message => {
                         message.channel.send({embed:embed});
                         }
                     });
+//mute
+const bot = client
+ bot.mutes = require("./mutes.json")
+client.on('ready', () => {
+    console.log(`Logged in as ${bot.user.tag}`)
+    bot.setInterval(() => {
+        for (let i in bot.mutes) {
+            let time = bot.mutes[i].time;
+            let member = bot.mutes[i].muted
+            let mutereason = "Mute time is over"
+            if (Date.now() > time) {
+                bot.guilds.get(bot.mutes[i].guildid).members.get(`${member}`).removeRole(bot.mutes[i].roleid, mutereason)
+                delete bot.mutes[i];
+                fs.writeFile("./mutes.json", JSON.stringify(bot.mutes, null, 4), (err) => {
+                    if (err) throw err;
+                    console.log(`${bot.users.get(member).username} has been unmuted`)
+                })
+            }
+        }
+    }, 5000)
+})
+bot.on("guildMemberAdd", async (member) => {
+    for (let i in bot.mutes) {
+        let data = bot.mutes[i];
+        if (data === undefined) return;
+        if (data.guildid !== member.guild.id) return;
+        let mutereason = "ليه تهرب "
+        let guildID = bot.mutes[i].guildid;
+        if (member.id === bot.mutes[i].muted) {
+            bot.guilds.get(`${guildID}`).members.get(`${member.id}`).addRole(`${bot.mutes[i].roleid}`, mutereason)
+        } else {
+            return;
+        }
+    }
+})
 //cat
 client.on('message', message => {
     if (message.content === 'حمودي') {
