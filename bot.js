@@ -319,4 +319,9 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/661101649238163487/762233908540080158/Screenshot_132.png")
     }
 });
+client.on('message', message => {
+    if (message.content === 'سوداني') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/732286802320425083/761173308757901353/unknown.png")
+    }
+});
 client.login(process.env.BOT_TOKEN);
