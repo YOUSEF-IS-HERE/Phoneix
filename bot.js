@@ -355,6 +355,25 @@ client.on('message', message => {
     })
     }
     });
+client.on("message", message => {
+    var prefix = "+"; // غير هنا حط البرفكس
+ 
+            var args = message.content.substring(prefix.length).split(" ");
+            if (message.content.startsWith(prefix + "clear")) {
+   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(':warning: | ليس لديك صلاحيات');
+        var msg;
+        msg = parseInt();
+
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+      message.channel.sendMessage("", {embed: {
+        title: "Done | تــم",
+        color: 0x06DF00,
+        description: "تم مسح 100 رسالة بنجاح",
+        footer: {
+          text: "Boom" // غير هنا حط اسم البوت
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
 //cat
 client.on('message', message => {
     if (message.content === 'حمودي') {
