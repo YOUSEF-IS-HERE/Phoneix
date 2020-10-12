@@ -231,7 +231,6 @@ const codes = {
 //s7b
 client.on('message', message => {
 if(message.content.startsWith(prefix + 'move all')) {
- if (!message.member.hasPermission("")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
    if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
 if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
  var author = message.member.voiceChannelID;
