@@ -397,7 +397,7 @@ client.on('message', message => {
 });
 client.on('message', message => {
     if (message.content === 'واحد تحميله') {
-        message.channel.sendFile("https://cdn.discordapp.com/emojis/674689963228659752.png?v=1")
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/768794640002318346/t7mela.PNG")
     }
 });
 client.on('message', message => {
