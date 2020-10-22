@@ -405,4 +405,9 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/768792929476411412/bkory.PNG")
     }
 });
+client.on('message', message => {
+    if (message.content === 'معجون سنسوداين') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/768795372273270784/kobh.PNG")
+    }
+});
 client.login(process.env.BOT_TOKEN);
