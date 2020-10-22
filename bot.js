@@ -385,4 +385,24 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/732286802320425083/761173308757901353/unknown.png")
     }
 });
+client.on('message', message => {
+    if (message.content === 'واحد كب كيك') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/768792356639997972/besso4.PNG")
+    }
+});
+client.on('message', message => {
+    if (message.content === 'بعوص') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/768791782653165618/besso3.PNG")
+    }
+});
+client.on('message', message => {
+    if (message.content === 'واحد تحميله') {
+        message.channel.sendFile("https://cdn.discordapp.com/emojis/674689963228659752.png?v=1")
+    }
+});
+client.on('message', message => {
+    if (message.content === 'بكوري') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/768792929476411412/bkory.PNG")
+    }
+});
 client.login(process.env.BOT_TOKEN);
