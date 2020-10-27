@@ -334,4 +334,9 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/768795372273270784/kobh.PNG")
     }
 });
+client.on('message', message => {
+    if (message.content === 'زول') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/574361533816111104/770535901272473600/8fcc9f4d2cd5affc.png")
+    }
+});
 client.login(process.env.BOT_TOKEN);
