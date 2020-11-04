@@ -344,33 +344,7 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/773499187723239455/Screenshot_5.png")
     }
 });
-//games
-    const Sra7a = [
-    
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500238073823262/Screenshot_121.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500292628086794/Screenshot_123.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500317244719114/Screenshot_131.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500352003702804/Screenshot_154.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500394181623838/Screenshot_190.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500422198788126/Screenshot_195.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500486954778695/Screenshot_209.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500486954778695/Screenshot_209.png',
-     '',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500613128355850/Screenshot_339.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500616990392340/Screenshot_346.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500620102959118/Screenshot_353.png',
-     'https://cdn.discordapp.com/attachments/519940850122489856/773500650817716254/Screenshot_338.png',
-]
-   client.on('message', message => {
- if (message.content.startsWith('pls بافرحان')) {
-     if(!message.channel.guild) return message.reply('** This command only for servers **');
-  var client= new Discord.RichEmbed()
-                  .setTimestamp()
 
-   message.channel.sendEmbed(client);
-   message.react("??")
- }
-});
   var rebel = ["https://cdn.discordapp.com/attachments/519940850122489856/773500194519515156/Screenshot_5.png","https://cdn.discordapp.com/attachments/519940850122489856/773500238073823262/Screenshot_121.png","https://cdn.discordapp.com/attachments/519940850122489856/773500292628086794/Screenshot_123.png","https://cdn.discordapp.com/attachments/519940850122489856/773500317244719114/Screenshot_131.png","https://cdn.discordapp.com/attachments/519940850122489856/773500352003702804/Screenshot_154.png","https://cdn.discordapp.com/attachments/519940850122489856/773500394181623838/Screenshot_190.png","https://cdn.discordapp.com/attachments/519940850122489856/773500422198788126/Screenshot_195.png","https://cdn.discordapp.com/attachments/519940850122489856/773500456063467540/Screenshot_189.png","https://cdn.discordapp.com/attachments/519940850122489856/773500486954778695/Screenshot_209.png","https://cdn.discordapp.com/attachments/519940850122489856/773500530113642506/Screenshot_213.png","https://cdn.discordapp.com/attachments/519940850122489856/773500613128355850/Screenshot_339.png","https://cdn.discordapp.com/attachments/519940850122489856/773500616990392340/Screenshot_346.png","https://cdn.discordapp.com/attachments/519940850122489856/773500620102959118/Screenshot_353.png","https://cdn.discordapp.com/attachments/519940850122489856/773500650817716254/Screenshot_338.png"]
      client.on('message', message => {
         var args = message.content.split(" ").slice(1);
