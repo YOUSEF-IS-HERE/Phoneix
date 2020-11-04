@@ -339,4 +339,9 @@ client.on('message', message => {
         message.channel.sendFile("https://cdn.discordapp.com/attachments/574361533816111104/770535901272473600/8fcc9f4d2cd5affc.png")
     }
 });
+client.on('message', message => {
+    if (message.content === 'pls بافرحان') {
+        message.channel.sendFile("https://cdn.discordapp.com/attachments/764227981668384800/773499187723239455/Screenshot_5.png")
+    }
+});
 client.login(process.env.BOT_TOKEN);
