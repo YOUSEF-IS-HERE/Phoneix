@@ -30,7 +30,7 @@ client.user.setGame(`Ittihad Bot`,"http://twitch.tv/S-F")
 
 //clear
 client.on("message", message => {
-    var prefix = "+"; // غير هنا حط البرفكس
+    var prefix = "^"; // غير هنا حط البرفكس
  
             var args = message.content.substring(prefix.length).split(" ");
             if (message.content.startsWith(prefix + "clear")) {
@@ -88,7 +88,7 @@ client.on('message', message => {
  });
 //id
 client.on('message', message => {
-  var prefix = "+"
+  var prefix = "^"
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
